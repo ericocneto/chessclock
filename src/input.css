@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .clock{
+    @apply flex flex-col gap-8;
+  }
+  .clock__player--display--block {
+    @apply bg-gray-500 w-[300px] h-[300px]  rounded-2xl shadow-2xl text-white text-center text-7xl flex justify-center items-center flex-nowrap;
+  }
+  .playing--now {
+    @apply scale-95 shadow-2xs;
+  }
+}
