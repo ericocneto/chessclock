@@ -45,7 +45,7 @@ playPause.addEventListener("click", () => {
    DISPLAY
    ===================================================== */
 
-// Converte segundos para formato MM:SS
+// MM:SS format
 function formatTime(seconds) {
   const minutes = Math.floor(seconds / 60);
   const remainingSeconds = seconds % 60;
