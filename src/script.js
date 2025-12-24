@@ -1,24 +1,18 @@
 // "use strict";
 
 /* =====================================================
-   APPLICATION STATE
-   Fonte única de verdade do jogo
+   TIME PRESETS
    ===================================================== */
 
-// 0 = white | 1 = black
-let activePlayer = 0;
+let activePlayer = 0; // 0 === white, 1 === black
 
-// Tempo restante (em segundos)
-let whiteTimeCurrent = 300;
-let blackTimeCurrent = 300;
+let whiteTimeCurrent = 300; // 5min
+let blackTimeCurrent = 300; // 5min
 
-// Intervalo ativo do relógio
 let timer = null;
 
-
 /* =====================================================
-   DOM REFERENCES
-   Cache de elementos para performance e legibilidade
+   DOM CACHE
    ===================================================== */
 
 const whiteButton = document.getElementById("whiteDisplay");
@@ -30,22 +24,13 @@ const blackTimeEl = document.getElementById("blackTimeRemaining");
 const clockSound = document.getElementById("clockSound");
 const playPause = document.getElementById("playPause");
 
-
-/* =====================================================
-   UI INITIAL STATE
-   ===================================================== */
-
-// Estado visual inicial do botão play/pause
 playPause.classList.add("fa-play");
 playPause.classList.remove("fa-pause");
 
-
 /* =====================================================
-   UI EVENTS
-   Apenas responsabilidade visual (sem regra de jogo)
+    PLAYING NOW
    ===================================================== */
 
-// Alterna o ícone do botão play/pause
 playPause.addEventListener("click", () => {
   if (playPause.classList.contains("fa-pause")) {
     playPause.classList.remove("fa-pause");
@@ -56,10 +41,8 @@ playPause.addEventListener("click", () => {
   }
 });
 
-
 /* =====================================================
-   UTILITY FUNCTIONS
-   Funções puras (sem efeitos colaterais)
+   DISPLAY
    ===================================================== */
 
 // Converte segundos para formato MM:SS
@@ -73,23 +56,17 @@ function formatTime(seconds) {
   return `${mm}:${ss}`;
 }
 
-
 /* =====================================================
-   GAME CONTROL
-   Regra principal do relógio de xadrez
+    SWITCH PLAYER
    ===================================================== */
 
-// Controle da troca de turnos via tecla espaço
 document.addEventListener("keydown", (e) => {
   if (e.key === " ") {
-    // Garante apenas um relógio rodando
     clearInterval(timer);
-
-    // Remove destaque visual dos dois jogadores
     whiteButton.classList.remove("playing--now");
     blackButton.classList.remove("playing--now");
 
-    // Turno das brancas
+    // white
     if (activePlayer === 0) {
       whiteButton.classList.add("playing--now");
 
@@ -103,7 +80,7 @@ document.addEventListener("keydown", (e) => {
 
       activePlayer = 1;
 
-    // Turno das pretas
+      // black
     } else {
       blackButton.classList.add("playing--now");
 
