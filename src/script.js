@@ -216,25 +216,27 @@ if (resetIcon) {
 /* =====================================================
    TOAST
    ===================================================== */
-function showToast(message, duration = 3000) {
-  const toast = document.getElementById("toast")
+// function showToast(message, duration = 3000) {
+//   const toast = document.getElementById("toast")
 
-  toast.textContent = message
+//   toast.textContent = message
 
-  // show
-  toast.classList.remove("hidden")
-  requestAnimationFrame(() => {
-    toast.classList.remove("opacity-0", "translate-y-4")
-    toast.classList.add("opacity-100", "translate-y-0")
-  })
+//   // show
+//   toast.classList.remove("hidden")
+//   requestAnimationFrame(() => {
+//     toast.classList.remove("opacity-0", "translate-y-4")
+//     toast.classList.add("opacity-100", "translate-y-0")
+//   })
 
-  // hide
-  setTimeout(() => {
-    toast.classList.remove("opacity-100", "translate-y-0")
-    toast.classList.add("opacity-0", "translate-y-4")
+//   // hide
+//   setTimeout(() => {
+//     toast.classList.remove("opacity-100", "translate-y-0")
+//     toast.classList.add("opacity-0", "translate-y-4")
 
-    setTimeout(() => {
-      toast.classList.add("hidden")
-    }, 300)
-  }, duration)
-}
+//     setTimeout(() => {
+//       toast.classList.add("hidden")
+//     }, 300)
+//   }, duration)
+// }
+
+// showToast('hello world!')
