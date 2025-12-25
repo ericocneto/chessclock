@@ -23,10 +23,19 @@
         </div>
       </section>
       <div id="menu" class="flex flex-col gap-12 mt-4">
-        <i class="fa-solid fa-gear fa-2xl"></i>
-        <i class="fa-solid fa-play fa-2xl" id="playPause"></i>
+        <i class="fa-solid fa-gear fa-2xl icon" id="settingsIcon"></i>
+        <i class="fa-solid fa-play fa-2xl icon" id="playPause"></i>
+        <i class="fa-solid fa-arrows-rotate fa-2xl icon" id="resetIcon"></i>
       </div>
     </div>
+    <div id="settingsModal" class="settings--modal hidden">
+      <i
+        id="exitSettingsIco"
+        class="fa-solid fa-x text-red-400 fa-1xl m-4 hover:text-red-300"
+      ></i>
+      <h1 class="text-center text-4xl">Settings</h1>
+    </div>
+    <div id="toast" class="fixed bottom-6 right-6 z-50 hidden rounded-md bg-neutral-900 px-4 py-3 text-sm text-white shadow-lg transition-all duration-300 opacity-0 translate-y-4"></div>
 
     <audio src="src/clocksound.mp3" id="clockSound"></audio>
     <!-- <script src="src/script.js"></script> -->

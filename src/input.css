@@ -10,4 +10,12 @@
   .playing--now {
     @apply scale-95 shadow-2xl bg-gray-400;
   }
+
+  .settings--modal {
+    @apply  bg-gray-900 w-[70%] h-[70%] rounded-2xl text-white text-2xl absolute right-1/2 top-1/2 translate-x-1/2 -translate-y-1/2 opacity-90 shadow-2xl;
+  }
+
+  .icon {
+    @apply text-orange-800  hover:text-orange-500;
+  }
 }
