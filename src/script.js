@@ -13,6 +13,8 @@ let blackTimeCurrent = DEFAULT_TIME;
 
 let timer = null;
 
+const fiveminOption = document.getElementById('fiveminOption')
+
 /* =====================================================
    DOM CACHE
    ===================================================== */
@@ -160,6 +162,11 @@ settingsIcon.addEventListener("click", () => {
 exitSettingsIco.addEventListener("click", () => {
   settingsModal.classList.toggle("hidden");
 });
+exitSettingsIco.addEventListener("keydown", e=> {
+  if(e.key === "Escape") {
+    settingsModel.classList.toggle('hidden')
+  }
+})
 
 /* =====================================================
    PLAY/PAUSE FEATURE

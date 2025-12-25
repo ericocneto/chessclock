@@ -28,12 +28,19 @@
         <i class="fa-solid fa-arrows-rotate fa-2xl icon" id="resetIcon"></i>
       </div>
     </div>
-    <div id="settingsModal" class="settings--modal hidden">
+    <div id="settingsModal" class="settings--modal hidden"> 
+
+  <!-- add hidden to js and div settigsModal -->
       <i
         id="exitSettingsIco"
         class="fa-solid fa-x text-red-400 fa-1xl m-4 hover:text-red-300"
       ></i>
-      <h1 class="text-center text-4xl">Settings</h1>
+      <h1 class="text-center text-4xl ">Settings</h1>
+      <p>
+        <h2 class="m-6 text-3xl">Time control: <select name="" class="text-2xl bg-gray-700 p-1.5 rounded-2xl" id="selectTimeControl">
+          <option value="fivemin" id="fiveminOption">5 | 0</option>
+        </select></h2>
+      </p>
     </div>
     <div id="toast" class="fixed bottom-6 right-6 z-50 hidden rounded-md bg-neutral-900 px-4 py-3 text-sm text-white shadow-lg transition-all duration-300 opacity-0 translate-y-4"></div>
 
