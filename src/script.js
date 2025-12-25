@@ -13,7 +13,7 @@ let blackTimeCurrent = DEFAULT_TIME;
 
 let timer = null;
 
-const fiveminOption = document.getElementById('fiveminOption')
+const selectTimeControl = document.getElementById('selectTimeControl')
 
 /* =====================================================
    DOM CACHE
@@ -149,6 +149,22 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
+document.getElementById('chessDisplay').addEventListener('click', (e) => {
+  // Prevent triggering if clicking on menu or settings
+  if (e.target.closest('#menu') || e.target.closest('#settingsModal')) return;
+  
+  if (timer) {
+    switchPlayerTurn();
+  } else {
+    started = true;
+    if (playPause.classList.contains("fa-play")) {
+      playPause.classList.remove("fa-play");
+      playPause.classList.add("fa-pause");
+    }
+    startTimerForActivePlayer();
+  }
+});
+
 /* =====================================================
     SETTINGS
    ===================================================== */
@@ -161,6 +177,11 @@ settingsIcon.addEventListener("click", () => {
 //exit
 exitSettingsIco.addEventListener("click", () => {
   settingsModal.classList.toggle("hidden");
+});
+
+selectTimeControl.addEventListener('change', () => {
+  DEFAULT_TIME = parseInt(selectTimeControl.value);
+  resetClock();
 });
 exitSettingsIco.addEventListener("keydown", e=> {
   if(e.key === "Escape") {
