@@ -7,7 +7,7 @@
 let activePlayer = 0; // 0 === white, 1 === black
 let started = false
 
-const DEFAULT_TIME = 300; // 5min
+let DEFAULT_TIME = 300; // 5min
 let whiteTimeCurrent = DEFAULT_TIME;
 let blackTimeCurrent = DEFAULT_TIME;
 
@@ -180,12 +180,21 @@ exitSettingsIco.addEventListener("click", () => {
 });
 
 selectTimeControl.addEventListener('change', () => {
-  DEFAULT_TIME = parseInt(selectTimeControl.value);
+  DEFAULT_TIME = Number(selectTimeControl.value);
+
+  whiteTimeCurrent = DEFAULT_TIME;
+  blackTimeCurrent = DEFAULT_TIME;
+
+  whiteTimeEl.textContent = formatTime(whiteTimeCurrent);
+  blackTimeEl.textContent = formatTime(blackTimeCurrent);
+
   resetClock();
 });
+
+
 exitSettingsIco.addEventListener("keydown", e=> {
   if(e.key === "Escape") {
-    settingsModel.classList.toggle('hidden')
+  settingsModal.classList.toggle('hidden')
   }
 })
 
