@@ -1,1 +1,1 @@
-⛓️ | https://ericocneto.github.io/chessclock/
+🔗 | https://ericocneto.github.io/chessclock/
