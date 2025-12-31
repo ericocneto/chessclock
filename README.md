@@ -1,2 +1,2 @@
-🔗 | https://ericocneto.github.io/chessclock/
-relógio de xadrez simples com js vanilla + tailwind
+🔗 | https://ericocneto.github.io/chessclock/ <br>
+relógio de xadrez simples com vanilla js + tailwind
